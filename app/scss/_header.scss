@@ -1,0 +1,47 @@
+.header {
+    position: relative;
+    z-index: 1;
+    
+    nav {
+        // background-color: teal;
+        padding: 40px 22px;
+        position: relative;
+    }
+
+    &__logo {
+        img {
+            width: 120px;
+            height: 22px;
+        }
+    }
+
+    &__burger {
+        span {
+            display: block;
+            width: 25px;
+            height: 4px;
+            background-color: $cobalt_blue;
+
+            &:not(:last-child) {
+                margin-bottom: 3px;
+            }
+        }
+    }
+
+    &__links {
+        a {
+            font-size: $font-sm;
+            font-weight: 500;
+            color: $cobalt_blue;
+            transition: opacity 0.3s ease-in-out;
+
+            &:not(:last-child) {
+                margin-right: 32px;
+            }
+
+            &:hover {
+                opacity: 0.6;
+            }
+        }
+    }
+}
