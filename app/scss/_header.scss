@@ -1,19 +1,40 @@
 .header {
     position: relative;
     z-index: 1;
-    
+
+    .faded-bg {
+        position: fixed;
+        top: 50px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-image: linear-gradient(transparent, $black_blue);
+
+        @include breakpoint-up(large) {
+            display: none;
+        }
+    }
+
     nav {
         // background-color: teal;
         padding: 2.5rem 1.5625rem; 
         position: relative;
     }
 
-    
+    a {
+        font-size: $font-sm;
+        font-weight: 500;
+        color: $cobalt_blue;
+        transition: opacity 0.3s ease-in-out;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
 
     &__logo {
         img {
-            position: absolute;
-            bottom: 38%;
+            margin-top: 0.625rem;
             width: 7.375rem;
             height: 1.375rem;
         }
@@ -43,17 +64,8 @@
 
     &__links {
         a {
-            font-size: $font-sm;
-            font-weight: 500;
-            color: $cobalt_blue;
-            transition: opacity 0.3s ease-in-out;
-
             &:not(:last-child) {
                 margin-right: 2rem;
-            }
-
-            &:hover {
-                opacity: 0.6;
             }
         }
     }
@@ -73,4 +85,26 @@
             }
         }
     }
+
+    &__menu {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 3rem);
+        padding: 1.5625rem;
+        background-color: #fff;
+        border-radius: 5px;
+
+        a {
+            display: block;
+            padding: 0.75rem;
+            text-align: center;
+        }
+
+        @include breakpoint-up(large) {
+            display: none;
+        }
+    }
+
+    
 }

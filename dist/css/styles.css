@@ -157,6 +157,10 @@ h1 {
   }
 }
 
+.hidden {
+  visibility: hidden;
+}
+
 .button {
   padding: 15px 30px;
   background-color: #f3613c;
@@ -174,9 +178,99 @@ h1 {
   opacity: 0.6;
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.fades-in {
+  -webkit-animation: fade-in 300ms ease-in-out forwards;
+          animation: fade-in 300ms ease-in-out forwards;
+}
+
+@-webkit-keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+.fades-out {
+  -webkit-animation: fade-out 300ms ease-in-out forwards;
+          animation: fade-out 300ms ease-in-out forwards;
+}
+
 .header {
   position: relative;
   z-index: 1;
+}
+
+.header .faded-bg {
+  position: fixed;
+  top: 50px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#1d1e25));
+  background-image: linear-gradient(transparent, #1d1e25);
+}
+
+@media (min-width: 64em) {
+  .header .faded-bg {
+    display: none;
+  }
 }
 
 .header nav {
@@ -184,9 +278,20 @@ h1 {
   position: relative;
 }
 
+.header a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #242d52;
+  -webkit-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.header a:hover {
+  opacity: 0.6;
+}
+
 .header__logo img {
-  position: absolute;
-  bottom: 38%;
+  margin-top: 0.625rem;
   width: 7.375rem;
   height: 1.375rem;
 }
@@ -213,20 +318,8 @@ h1 {
   margin-bottom: 0.1875rem;
 }
 
-.header__links a {
-  font-size: 14px;
-  font-weight: 500;
-  color: #242d52;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
-}
-
 .header__links a:not(:last-child) {
   margin-right: 2rem;
-}
-
-.header__links a:hover {
-  opacity: 0.6;
 }
 
 .header.open .header__burger > span:nth-child(1) {
@@ -241,6 +334,29 @@ h1 {
 .header.open .header__burger > span:nth-child(3) {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
+}
+
+.header__menu {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: calc(100% - 3rem);
+  padding: 1.5625rem;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.header__menu a {
+  display: block;
+  padding: 0.75rem;
+  text-align: center;
+}
+
+@media (min-width: 64em) {
+  .header__menu {
+    display: none;
+  }
 }
 
 .hero .container {
