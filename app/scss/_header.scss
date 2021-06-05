@@ -1,114 +1,111 @@
 .header {
-    position: relative;
-    z-index: 1;
+   position: relative;
+   z-index: 1;
 
-    .faded-bg {
-        position: fixed;
-        top: 50px;
-        right: 0px;
-        bottom: 0px;
-        left: 0px;
-        background-image: linear-gradient(transparent, $black_blue);
+   .faded-bg {
+      position: fixed;
+      top: 50px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      background-image: linear-gradient(transparent, $black_blue);
 
-        @include breakpoint-up(large) {
-            display: none;
-        }
-    }
+      @include breakpoint-up(large) {
+         display: none;
+      }
+   }
 
-    nav {
-        // background-color: teal;
-        padding: 2.5rem 1.5625rem; 
-        position: relative;
-    }
+   nav {
+      // background-color: teal;
+      padding: 2.5rem 1.5625rem;
+      position: relative;
+   }
 
-    a {
-        font-size: $font-sm;
-        font-weight: 500;
-        color: $cobalt_blue;
-        transition: opacity 0.3s ease-in-out;
+   a {
+      font-size: $font-sm;
+      font-weight: 500;
+      color: $cobalt_blue;
+      transition: opacity 0.3s ease-in-out;
 
-        &:hover {
-            opacity: 0.6;
-        }
+      &:hover {
+         opacity: 0.6;
+      }
 
-        &.button{
-            color: #fff;
-        }
-    }
+      &.button {
+         color: #fff;
+      }
+   }
 
-    &__logo {
-        img {
-            margin-top: 0.625rem;
-            width: 7.375rem;
-            height: 1.375rem;
-        }
-        @include breakpoint-down(medium) {
-            img {
-                height: 1.125rem;
-                width: 6.0625rem;
-            }
-        }
+   &__logo {
+      img {
+         margin-top: 0.625rem;
+         width: 7.375rem;
+         height: 1.375rem;
+      }
+      @include breakpoint-down(medium) {
+         img {
+            height: 1.125rem;
+            width: 6.0625rem;
+         }
+      }
+   }
 
-    }
+   &__burger {
+      > span {
+         display: block;
+         width: 1.5625rem;
+         height: 0.25rem;
+         background-color: $cobalt_blue;
+         transition: all 300ms ease-in-out;
+         transform-origin: 2.6px 2px;
 
-    &__burger {
-        > span {
-            display: block;
-            width: 1.5625rem;
-            height: 0.25rem;
-            background-color: $cobalt_blue;
-            transition: all 300ms ease-in-out;
-            transform-origin: 2.6px 2px;
+         &:not(:last-child) {
+            margin-bottom: 0.1875rem;
+         }
+      }
+   }
 
-            &:not(:last-child) {
-                margin-bottom: 0.1875rem;
-            }
-        }
-    }
+   &__links {
+      a {
+         &:not(:last-child) {
+            margin-right: 2rem;
+         }
+      }
+   }
 
-    &__links {
-        a {
-            &:not(:last-child) {
-                margin-right: 2rem;
-            }
-        }
-    }
+   &.open {
+      .header__burger {
+         > span:nth-child(1) {
+            transform: rotate(45deg);
+         }
 
-    &.open {
-        .header__burger {
-            > span:nth-child(1) {
-                transform: rotate(45deg);
-            }
+         > span:nth-child(2) {
+            opacity: 0;
+         }
 
-            > span:nth-child(2) {
-                opacity: 0;
-            }
+         > span:nth-child(3) {
+            transform: rotate(-45deg);
+         }
+      }
+   }
 
-            >span:nth-child(3) {
-                transform: rotate(-45deg);
-            }
-        }
-    }
+   &__menu {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: calc(100% - 3rem);
+      padding: 1.5625rem;
+      background-color: #fff;
+      border-radius: 5px;
 
-    &__menu {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: calc(100% - 3rem);
-        padding: 1.5625rem;
-        background-color: #fff;
-        border-radius: 5px;
+      a {
+         display: block;
+         padding: 0.75rem;
+         text-align: center;
+      }
 
-        a {
-            display: block;
-            padding: 0.75rem;
-            text-align: center;
-        }
-
-        @include breakpoint-up(large) {
-            display: none;
-        }
-    }
-
-    
+      @include breakpoint-up(large) {
+         display: none;
+      }
+   }
 }

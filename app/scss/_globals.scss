@@ -33,31 +33,64 @@ body {
       overflow: hidden;
       z-index: -1;
 
-      &::before {
-         content: "";
-         position: absolute;
-         top: -12%;
-         left: 0;
-         right: 0;
-         width: 700px;
-         height: 243px;
-         background-color: $sea_shell;
-         border-radius: 200px;
-         transform: rotate(-45deg);
-         z-index: -1;
+      &__one {
+         &::before {
+            content: "";
+            position: absolute;
+            top: -12%;
+            left: 0;
+            right: 0;
+            width: 700px;
+            height: 243px;
+            background-color: $sea_shell;
+            border-radius: 300px;
+            transform: rotate(-45deg);
+            z-index: -1;
 
-         // Calculate the mid point of w:1246px and w:700px
-         @include breakpoint-up(medium) {
-            left: 42%;
-            width: 973px;
-            height: 337px;
+            // Calculate the mid point of w:1246px and w:700px
+            @include breakpoint-up(medium) {
+               left: 42%;
+               width: 973px;
+               height: 337px;
+            }
+
+            // Calculate .78% of w:700px and h:243px
+            @include breakpoint-up(large) {
+               left: 42%;
+               width: 1246px;
+               height: 432px;
+            }
          }
+      }
 
-         // Calculate .78% of w:700px and h:243px
-         @include breakpoint-up(large) {
-            left: 42%;
-            width: 1246px;
+      &__two {
+         top: 50%;
+         height: 250%;
+
+         &::before {
+            content: "";
+            position: absolute;
+            top: 54%;
+            left: -34%;
+            width: 800px;
             height: 432px;
+            background-color: $sea_shell;
+            border-radius: 300px;
+            transform: rotate(-45deg);
+
+            @include breakpoint-down(medium) {
+               top: 43%;
+               left: -60%;
+               width: 800px;
+               height: 337px;
+            }
+
+            @include breakpoint-down(small) {
+               top: 12%;
+               left: 55%;
+               width: 450px;
+               height: 180px;
+            }
          }
       }
    }
@@ -73,7 +106,8 @@ a:hover {
 // Heading styles
 h1,
 h2,
-h3 {
+h3,
+h4 {
    margin-top: 0;
    font-weight: 700;
    line-height: 1.15;
@@ -88,6 +122,19 @@ h1 {
    }
 }
 
+h2 {
+   font-size: 37px;
+
+   @include breakpoint-down(medium) {
+      font-size: 28px;
+   }
+}
+
+h4 {
+   @include breakpoint-down(small) {
+      font-size: $font-sm;
+   }
+}
 p {
    line-height: 30px;
 }
@@ -96,6 +143,7 @@ p {
 .container {
    max-width: 69.375rem;
    margin: 0 auto;
+   overflow-x: hidden;
 
    &--pall {
       padding-top: 4.375rem;

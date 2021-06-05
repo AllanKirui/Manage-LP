@@ -1,0 +1,122 @@
+.article {
+   padding: 2.375rem 1.5625rem;
+   // z-index: 2;
+   // overflow: visible;
+
+   @include breakpoint-down(small) {
+      display: flex;
+      flex-direction: column;
+      padding: 2.375rem 1.0625rem;
+   }
+
+   &__intro {
+      @include breakpoint-up(large) {
+         p {
+            max-width: 80%;
+         }
+      }
+
+      @include breakpoint-down(small) {
+         padding: 0 1.5625rem;
+         text-align: center;
+
+         p {
+            margin-bottom: 20px;
+            font-size: $font-sm;
+         }
+      }
+   }
+
+   &__container {
+      max-width: 80%;
+
+      @include breakpoint-up(medium) {
+         margin-left: 0.625rem;
+      }
+      @include breakpoint-up(large) {
+         margin-left: 0;
+      }
+      @include breakpoint-down(small) {
+         max-width: 100%;
+      }
+   }
+
+   &__sub-article {
+      margin-left: 6.875rem;
+
+      &:nth-child(1) {
+         margin-top: 1.9375rem;
+      }
+
+      @include breakpoint-up(large) {
+         &:not(:nth-child(3)) {
+            padding-bottom: 3.375rem;
+         }
+      }
+
+      @include breakpoint-down(medium) {
+         margin-left: 0;
+         padding-bottom: 1.5rem;
+      }
+   }
+
+   &__title {
+      position: relative;
+      display: flex;
+      align-items: center;
+
+      span {
+         margin-right: 1.6875rem;
+         padding: 0.6875rem 1.5rem;
+         border-radius: 3.125rem;
+         background-color: $orange_soda;
+         color: white;
+
+         @include breakpoint-down(small) {
+            margin-right: 0.875rem;
+         }
+      }
+
+      h4 {
+         position: absolute;
+         display: flex;
+         align-items: center;
+         width: 150%;
+         height: 100%;
+
+         &::before {
+            content: "";
+            position: absolute;
+            width: calc(100vw + 3rem);
+            height: 100%;
+            border-radius: 3.125rem;
+            background-color: $sea_shell;
+            z-index: -1;
+         }
+
+         @include breakpoint-down(small) {
+            position: relative;
+            margin-bottom: 0;
+         }
+      }
+   }
+
+   &__text {
+      margin-top: 0.5625rem;
+      margin-left: 5.8125rem;
+
+      @include breakpoint-up(medium) {
+         max-width: 95%;
+      }
+
+      @include breakpoint-down(small) {
+         margin-left: 0;
+         max-width: 100%;
+         font-size: $font-sm;
+      }
+
+      p {
+         margin-top: 0;
+      }
+   }
+}
