@@ -735,6 +735,8 @@ p {
 }
 
 .feature {
+  max-width: 90rem;
+  margin: auto;
   margin-top: 5rem;
   margin-bottom: 10.625rem;
   text-align: center;
@@ -834,6 +836,8 @@ p {
 }
 
 .sub-feature {
+  max-width: 90rem;
+  margin: auto;
   background-color: #f3613c;
   position: relative;
   overflow: hidden;
