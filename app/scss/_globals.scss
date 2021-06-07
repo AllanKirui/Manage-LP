@@ -227,6 +227,18 @@ p {
    }
 }
 
+.hide-slider {
+   @include breakpoint-up(medium) {
+      display: none;
+   }
+}
+
+.show-slider {
+   @include breakpoint-down(small) {
+      display: none;
+   }
+}
+
 .hidden {
    visibility: hidden;
 }
