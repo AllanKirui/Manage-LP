@@ -1,0 +1,87 @@
+.sub-feature {
+   background-color: $orange_soda;
+   position: relative;
+   overflow: hidden;
+
+   &__container {
+      padding: 4.375rem 1.5625rem 4.0625rem;
+      overflow: hidden;
+
+      @include breakpoint-down(small) {
+         flex-direction: column;
+         padding: 6.25rem 2rem 6.25rem;
+      }
+   }
+
+   &__title {
+      width: 50%;
+      z-index: 1;
+
+      h2 {
+         margin: 0;
+         color: #fff;
+         @include breakpoint-down(medium) {
+            font-size: 2.0625rem;
+         }
+         @include breakpoint-down(small) {
+            font-size: 2.25rem;
+            line-height: 2.8125rem;
+         }
+      }
+
+      @include breakpoint-down(medium) {
+         width: 45%;
+      }
+
+      @include breakpoint-down(small) {
+         width: 95%;
+         text-align: center;
+         margin-bottom: 2.5rem;
+      }
+   }
+
+   &__cta {
+      background-color: #fff;
+      box-shadow: 0 5px 5px rgba($cobalt_blue, $alpha: 0.2);
+      color: $orange_soda;
+   }
+
+   &__image1 {
+      position: absolute;
+      top: -20%;
+      left: 7%;
+      opacity: 0.1;
+
+      img {
+         width: 31.25rem;
+      }
+
+      @include breakpoint-down(medium) {
+         left: -20%;
+      }
+
+      @include breakpoint-down(small) {
+         top: 15%;
+         left: -107%;
+      }
+   }
+
+   &__image2 {
+      position: absolute;
+      top: -155%;
+      right: -23%;
+      opacity: 0.1;
+
+      img {
+         width: 31.25rem;
+      }
+
+      @include breakpoint-down(medium) {
+         top: -175%;
+         right: -40%;
+      }
+      @include breakpoint-down(small) {
+         display: none;
+      }
+   }
+}

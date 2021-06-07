@@ -277,7 +277,7 @@ p {
   border-radius: 50px;
   color: #fff;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
   -webkit-transition: opacity 0.3s ease-in-out;
   transition: opacity 0.3s ease-in-out;
 }
@@ -823,6 +823,119 @@ p {
   .feature__text p {
     margin: 27px 31px 0px 31px;
     font-size: 14px;
+  }
+}
+
+.sub-feature {
+  background-color: #f3613c;
+  position: relative;
+  overflow: hidden;
+}
+
+.sub-feature__container {
+  padding: 4.375rem 1.5625rem 4.0625rem;
+  overflow: hidden;
+}
+
+@media (max-width: 39.9375em) {
+  .sub-feature__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding: 6.25rem 2rem 6.25rem;
+  }
+}
+
+.sub-feature__title {
+  width: 50%;
+  z-index: 1;
+}
+
+.sub-feature__title h2 {
+  margin: 0;
+  color: #fff;
+}
+
+@media (max-width: 63.9375em) {
+  .sub-feature__title h2 {
+    font-size: 2.0625rem;
+  }
+}
+
+@media (max-width: 39.9375em) {
+  .sub-feature__title h2 {
+    font-size: 2.25rem;
+    line-height: 2.8125rem;
+  }
+}
+
+@media (max-width: 63.9375em) {
+  .sub-feature__title {
+    width: 45%;
+  }
+}
+
+@media (max-width: 39.9375em) {
+  .sub-feature__title {
+    width: 95%;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.sub-feature__cta {
+  background-color: #fff;
+  -webkit-box-shadow: 0 5px 5px rgba(36, 45, 82, 0.2);
+          box-shadow: 0 5px 5px rgba(36, 45, 82, 0.2);
+  color: #f3613c;
+}
+
+.sub-feature__image1 {
+  position: absolute;
+  top: -20%;
+  left: 7%;
+  opacity: 0.1;
+}
+
+.sub-feature__image1 img {
+  width: 31.25rem;
+}
+
+@media (max-width: 63.9375em) {
+  .sub-feature__image1 {
+    left: -20%;
+  }
+}
+
+@media (max-width: 39.9375em) {
+  .sub-feature__image1 {
+    top: 15%;
+    left: -107%;
+  }
+}
+
+.sub-feature__image2 {
+  position: absolute;
+  top: -155%;
+  right: -23%;
+  opacity: 0.1;
+}
+
+.sub-feature__image2 img {
+  width: 31.25rem;
+}
+
+@media (max-width: 63.9375em) {
+  .sub-feature__image2 {
+    top: -175%;
+    right: -40%;
+  }
+}
+
+@media (max-width: 39.9375em) {
+  .sub-feature__image2 {
+    display: none;
   }
 }
 /*# sourceMappingURL=styles.css.map */
