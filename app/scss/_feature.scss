@@ -1,43 +1,43 @@
 .feature {
-   margin-top: 80px;
-   margin-bottom: 170px;
+   margin-top: 5rem;
+   margin-bottom: 10.625rem;
    text-align: center;
 
    @include breakpoint-down(medium) {
       margin-top: 0;
-      margin-bottom: 112px;
+      margin-bottom: 7rem;
    }
 
    @include breakpoint-down(small) {
-      margin-bottom: 54px;
+      margin-bottom: 3.375rem;
    }
 
    &__main-sliders {
-      margin-bottom: 60px;
+      margin-bottom: 3.75rem;
    }
 
    &__main-slide {
       width: 40%;
-      margin-left: 28px;
+      margin-left: 1.75rem;
 
       @include breakpoint-down(medium) {
-         min-width: 410px;
+         min-width: 25.625rem;
       }
    }
 
    &__mobile-sliders {
-      margin-bottom: 25px;
+      margin-bottom: 1.5625rem;
    }
 
    &__mobile-slide {
       position: relative;
       width: 92vw;
-      margin-left: 17px;
+      margin-left: 1.0625rem;
    }
 
    &__options {
       text-align: center;
-      margin-bottom: 60px;
+      margin-bottom: 3.75rem;
 
       &-dot {
          display: inline-block;
@@ -55,33 +55,33 @@
 
    &__image {
       width: 100%;
-      height: 80px;
+      height: 5rem;
 
       img {
          position: absolute;
          left: 50%;
          top: 14%;
          transform: translateX(-50%);
-         width: 72px;
-         height: 72px;
+         width: 4.5rem;
+         height: 4.5rem;
       }
    }
 
    &__text {
-      min-height: 220px;
+      min-height: 13.75rem;
       background-color: $snow;
 
       h4 {
-         padding-top: 65px;
+         padding-top: 4.0625rem;
       }
       p {
-         margin: 27px 41px 0px 41px;
+         margin: 1.6875rem 2.5625rem 0px 2.5625rem;
          padding-bottom: 45px;
       }
 
       @include breakpoint-down(small) {
          p {
-            margin: 27px 31px 0px 31px;
+            margin: 1.6875rem 1.9375rem 0px 1.9375rem;
             font-size: $font-sm;
          }
       }
