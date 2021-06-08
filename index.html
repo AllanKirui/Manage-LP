@@ -328,9 +328,14 @@
       <footer class="footer">
          <div class="container">
             <div class="footer__form hide-for-desktop">
-               <form>
-                  <input type="text" placeholder="Updates in your inbox…" />
+               <form id="go-form" novalidate>
+                  <input
+                     type="text"
+                     id="email"
+                     placeholder="Updates in your inbox…"
+                  />
                   <button>Go</button>
+                  <br /><small>Error Message</small>
                </form>
             </div>
 
@@ -510,9 +515,14 @@
             /></a>
 
             <div class="footer__form hide-for-medium-to-small">
-               <form novalidate>
-                  <input type="text" placeholder="Updates in your inbox…" />
+               <form id="go-form" novalidate>
+                  <input
+                     type="email"
+                     id="email"
+                     placeholder="Updates in your inbox…"
+                  />
                   <button>Go</button>
+                  <br /><small>Error Message</small>
                </form>
             </div>
 

@@ -166,6 +166,18 @@
                background-color: #f88f75;
             }
          }
+
+         small {
+            margin-right: 160px;
+            visibility: hidden;
+            font-size: 10px;
+
+            &.error {
+               visibility: visible;
+               color: $orange_soda;
+               font-style: italic;
+            }
+         }
       }
    }
 

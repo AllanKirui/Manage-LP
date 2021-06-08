@@ -1140,6 +1140,18 @@ p {
   background-color: #f88f75;
 }
 
+.footer__form form small {
+  margin-right: 160px;
+  visibility: hidden;
+  font-size: 10px;
+}
+
+.footer__form form small.error {
+  visibility: visible;
+  color: #f3613c;
+  font-style: italic;
+}
+
 @media (min-width: 64em) {
   .footer__copyright {
     grid-area: copyright;

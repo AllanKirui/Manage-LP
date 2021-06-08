@@ -73,3 +73,64 @@ cellsButtonGroup.addEventListener("click", function (event) {
    const index = cellsButtons.indexOf(event.target);
    flkty2.select(index);
 });
+
+// Form functionality
+// ------------------------------------
+// Grab elements from the DOM
+const go_form = document.getElementById("go-form");
+
+// Add an event listener to the form when it's submitted
+go_form.addEventListener("submit", (e) => {
+   // Prevent the form from being submitted
+   e.preventDefault();
+
+   // Get the value of the email field and trim any whitespaces
+   const input_el = document.getElementById("email");
+   const input_value = input_el.value.trim();
+
+   // Check if email field is blank
+   if (input_value === "") {
+      set_error_state(input_el, "Please enter an email address");
+      remove_state(input_el);
+      // Check if email is valid
+   } else if (!is_email(input_value)) {
+      set_error_state(input_el, "Please insert a valid email");
+      remove_state(input_el);
+   } else {
+      set_success_state(input_el, "Email is valid. Thank you ( ͡ᵔ ͜ʖ ͡ᵔ )");
+      remove_state(input_el);
+   }
+});
+
+// Define a function to display an error if email is NOT valid
+// It takes in the element to set the error on and the error message
+function set_error_state(el, message) {
+   const control_el = el.parentElement;
+
+   control_el.querySelector("small").innerText = message;
+   control_el.querySelector("small").classList.add("error");
+}
+
+// Define a function that will show success message
+function set_success_state(el, message) {
+   const control_el = el.parentElement;
+
+   control_el.querySelector("small").innerText = message;
+   control_el.querySelector("small").classList.add("error");
+   go_form.reset();
+}
+
+// Define a function to remove the error after 2s
+function remove_state(el) {
+   const control_el = el.parentElement;
+   setTimeout(() => {
+      control_el.querySelector("small").classList.remove("error");
+   }, 2000);
+}
+
+// Define a function that uses regular expressions to check if the email is valid
+function is_email(email) {
+   return /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
+      email
+   );
+}
