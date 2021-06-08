@@ -1,0 +1,183 @@
+.footer {
+   background-color: $black_blue;
+   color: $dark_grayish_blue;
+   font-size: $font-sm;
+   text-align: center;
+
+   @include breakpoint-up(large) {
+      padding: 3.625rem 0;
+   }
+
+   @include breakpoint-down(medium) {
+      padding: 3.125rem 1.375rem 1.75rem;
+   }
+
+   .container {
+      @include breakpoint-up(large) {
+         display: grid;
+         grid-template-columns: repeat(3, 1fr) 2fr;
+         grid-template-rows: repeat(1, auto);
+         grid-template-areas:
+            "logo links1 links2 form"
+            "social links1 links2 copyright";
+      }
+   }
+
+   &__logo {
+      @include breakpoint-up(large) {
+         grid-area: logo;
+         height: 20%;
+      }
+      img {
+         transition: opacity 0.2s ease-in-out;
+
+         &:hover {
+            opacity: 0.6;
+         }
+      }
+   }
+
+   &__social {
+      a {
+         svg path {
+            transition: fill 0.2s ease-in-out;
+         }
+
+         &:hover svg path {
+            fill: $orange_soda;
+         }
+      }
+
+      @include breakpoint-up(large) {
+         grid-area: social;
+         margin-top: 0.9375rem;
+
+         a {
+            &:not(:last-child) {
+               margin-right: 0.625rem;
+            }
+         }
+      }
+
+      @include breakpoint-down(medium) {
+         margin-bottom: 2.9375rem;
+
+         a {
+            &:not(:last-child) {
+               margin-right: 27px;
+            }
+         }
+      }
+   }
+
+   &__links,
+   &__links-col1,
+   &__links-col2 {
+      a {
+         text-decoration: none;
+         color: $snow;
+         transition: color 0.2s ease-in-out;
+
+         &:not(:last-child) {
+            margin-bottom: 1.25rem;
+         }
+
+         &:hover {
+            color: $orange_soda;
+         }
+      }
+   }
+
+   &__links {
+      width: 20.625rem;
+      margin: auto;
+      margin-bottom: 3.125rem;
+
+      &-mobile-col1,
+      &-mobile-col2 {
+         flex-direction: column;
+         align-items: flex-start;
+      }
+
+      &-mobile-col1 {
+         padding-left: 2.125rem;
+      }
+
+      &-mobile-col2 {
+         padding-left: 2.5rem;
+         width: 50%;
+      }
+   }
+
+   &__links-col1,
+   &__links-col2 {
+      flex-direction: column;
+      align-items: start;
+      margin-left: 5rem;
+   }
+
+   &__links-col1 {
+      grid-area: links1;
+   }
+
+   &__links-col2 {
+      grid-area: links2;
+   }
+
+   &__form {
+      @include breakpoint-up(large) {
+         grid-area: form;
+         padding-left: 3.125rem;
+      }
+
+      form {
+         margin-bottom: 3.625rem;
+
+         input {
+            width: 14.9375rem;
+            margin-right: 0.4375rem;
+            padding: 0.875rem 1.0625rem;
+            outline: none;
+            border: none;
+            border-radius: 3.125rem;
+            color: $orange_soda;
+            font-size: $font-sm;
+            font-family: "Be Vietnam", sans-serif;
+
+            &:focus {
+               border: 1px solid $orange_soda;
+            }
+         }
+
+         button {
+            padding: 0.875rem 1.875rem;
+            outline: none;
+            border: none;
+            border-radius: 3.125rem;
+            background-color: $orange_soda;
+            color: #fff;
+            font-size: $font-sm;
+            font-family: "Be Vietnam", sans-serif;
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.3s ease-in-out;
+
+            &:hover {
+               background-color: #f88f75;
+            }
+         }
+      }
+   }
+
+   &__copyright {
+      @include breakpoint-up(large) {
+         grid-area: copyright;
+         margin-top: 0.9375rem;
+         margin-left: 7.5rem;
+      }
+
+      @include breakpoint-down(medium) {
+         margin-top: 2.75rem;
+      }
+   }
+}

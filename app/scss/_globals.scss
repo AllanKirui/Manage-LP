@@ -16,6 +16,8 @@ body {
    font-size: $font-med;
    font-weight: 300;
    color: $dark_grayish_blue;
+   max-width: 90rem;
+   margin: auto;
 
    @include breakpoint-up(large) {
       font-size: $font-med;
@@ -235,6 +237,17 @@ p {
 
 .show-slider {
    @include breakpoint-down(small) {
+      display: none;
+   }
+}
+
+.hide-for-medium-to-small {
+   @include breakpoint-down(medium) {
+      display: none;
+   }
+}
+.hide-for-medium-to-large {
+   @include breakpoint-up(medium) {
       display: none;
    }
 }
