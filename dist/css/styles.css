@@ -291,13 +291,12 @@ p {
   border-radius: 50px;
   color: #fff;
   font-size: 14px;
-  font-weight: 600;
-  -webkit-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
+  -webkit-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .button:hover {
-  opacity: 0.6;
+  background-color: #fa8e79;
 }
 
 .no-scroll {
@@ -906,10 +905,19 @@ p {
 }
 
 .sub-feature__cta {
+  position: relative;
+  z-index: 1;
   background-color: #fff;
   -webkit-box-shadow: 0 5px 5px rgba(36, 45, 82, 0.2);
           box-shadow: 0 5px 5px rgba(36, 45, 82, 0.2);
   color: #f3613c;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+
+.sub-feature__cta:hover {
+  background-color: #fff;
+  color: #e4b8b1;
 }
 
 .sub-feature__image1 {

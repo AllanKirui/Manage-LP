@@ -41,9 +41,17 @@
    }
 
    &__cta {
+      position: relative;
+      z-index: 1;
       background-color: #fff;
       box-shadow: 0 5px 5px rgba($cobalt_blue, $alpha: 0.2);
       color: $orange_soda;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+         background-color: #fff;
+         color: #e4b8b1;
+      }
    }
 
    &__image1 {

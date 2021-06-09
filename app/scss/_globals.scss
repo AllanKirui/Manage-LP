@@ -264,11 +264,10 @@ p {
    border-radius: 50px;
    color: #fff;
    font-size: $font-sm;
-   font-weight: 600;
-   transition: opacity 0.3s ease-in-out;
+   transition: background-color 0.3s ease-in-out;
 
    &:hover {
-      opacity: 0.6;
+      background-color: #fa8e79;
    }
 }
 
