@@ -133,6 +133,10 @@
       form {
          margin-bottom: 3.625rem;
 
+         label {
+            display: none;
+         }
+
          input {
             width: 14.9375rem;
             margin-right: 0.4375rem;

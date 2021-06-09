@@ -1055,6 +1055,10 @@ p {
   margin-bottom: 3.625rem;
 }
 
+.footer__form form label {
+  display: none;
+}
+
 .footer__form form input {
   width: 14.9375rem;
   margin-right: 0.4375rem;
