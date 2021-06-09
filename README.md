@@ -40,7 +40,7 @@ Screenshot of the testimonials section of the page. The testimonials slide horiz
 
 ### Links
 
--  Solution URL: [Coming soon](https://your-solution-url.com)
+-  Solution URL: [Challenge Solution](https://www.frontendmentor.io/solutions/mobilefirst-workflow-using-sass-flexbox-and-css-grid-PHtHN5FQM)
 -  Live Site URL: [Manage LP](https://allankirui.github.io/Manage-LP)
 
 ## My process
