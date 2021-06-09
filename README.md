@@ -41,7 +41,7 @@ Screenshot of the testimonials section of the page. The testimonials slide horiz
 ### Links
 
 -  Solution URL: [Coming soon](https://your-solution-url.com)
--  Live Site URL: [Coming soon](https://your-live-site-url.com)
+-  Live Site URL: [Manage LP](https://allankirui.github.io/Manage-LP)
 
 ## My process
 
