@@ -78,8 +78,9 @@ cellsButtonGroup.addEventListener("click", function (event) {
 // ------------------------------------
 // Grab elements from the DOM
 const go_form = document.getElementById("go-form");
+const go_form_2 = document.getElementById("go-form-2");
 
-// Add an event listener to the form when it's submitted
+// Add an event listener to the mobile form when it's submitted
 go_form.addEventListener("submit", (e) => {
    // Prevent the form from being submitted
    e.preventDefault();
@@ -89,18 +90,36 @@ go_form.addEventListener("submit", (e) => {
    const input_value = input_el.value.trim();
 
    // Check if email field is blank
-   if (input_value === "") {
-      set_error_state(input_el, "Please enter an email address");
-      remove_state(input_el);
-      // Check if email is valid
-   } else if (!is_email(input_value)) {
-      set_error_state(input_el, "Please insert a valid email");
-      remove_state(input_el);
-   } else {
-      set_success_state(input_el, "Email is valid. Thank you ( ͡ᵔ ͜ʖ ͡ᵔ )");
-      remove_state(input_el);
-   }
+   validate_email(input_value, input_el);
 });
+
+// Add an event listener to the desktop form when it's submitted
+go_form_2.addEventListener("submit", (e) => {
+   // Prevent the form from being submitted
+   e.preventDefault();
+
+   // Get the value of the email field and trim any whitespaces
+   const input_el = document.getElementById("email-2");
+   const input_value = input_el.value.trim();
+
+   // Check if email field is blank
+   validate_email(input_value, input_el);
+});
+
+// Define a function to perform input checks on both forms
+function validate_email(value, el) {
+   if (value === "") {
+      set_error_state(el, "Please enter an email address");
+      remove_state(el);
+      // Check if email is valid
+   } else if (!is_email(value)) {
+      set_error_state(el, "Please insert a valid email");
+      remove_state(el);
+   } else {
+      set_success_state(el, "Email is valid. Thank you ( ͡ᵔ ͜ʖ ͡ᵔ )");
+      remove_state(el);
+   }
+}
 
 // Define a function to display an error if email is NOT valid
 // It takes in the element to set the error on and the error message
@@ -117,7 +136,10 @@ function set_success_state(el, message) {
 
    control_el.querySelector("small").innerText = message;
    control_el.querySelector("small").classList.add("error");
+
+   // Reset the forms
    go_form.reset();
+   go_form_2.reset();
 }
 
 // Define a function to remove the error after 2s
