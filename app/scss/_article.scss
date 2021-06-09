@@ -1,7 +1,5 @@
 .article {
    padding: 2.375rem 1.5625rem;
-   // z-index: 2;
-   // overflow: visible;
 
    @include breakpoint-down(small) {
       display: flex;

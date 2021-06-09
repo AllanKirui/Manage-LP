@@ -13,10 +13,12 @@
    }
 
    &__main-sliders {
+      // display: flex;
       margin-bottom: 3.75rem;
    }
 
    &__main-slide {
+      position: relative;
       width: 40%;
       margin-left: 1.75rem;
 

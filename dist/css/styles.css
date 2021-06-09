@@ -160,65 +160,6 @@ p {
   overflow-x: hidden;
 }
 
-.container--pall {
-  padding-top: 4.375rem;
-  padding-right: 1.5rem;
-  padding-bottom: 4.375rem;
-  padding-left: 1.5rem;
-}
-
-@media (min-width: 64em) {
-  .container--pall {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-}
-
-.container--py {
-  padding-top: 4.375rem;
-  padding-bottom: 4.375rem;
-}
-
-@media (min-width: 64em) {
-  .container--py {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-  }
-}
-
-.container--px {
-  padding-right: 1.5rem;
-  padding-left: 1.5rem;
-}
-
-.container--pt {
-  padding-top: 4.375rem;
-}
-
-@media (min-width: 64em) {
-  .container--pt {
-    padding-top: 6rem;
-  }
-}
-
-.container--pr {
-  padding-right: 1.5rem;
-}
-
-.container--pb {
-  padding-bottom: 4.375rem;
-}
-
-@media (min-width: 64em) {
-  .container--pb {
-    padding-bottom: 6rem;
-  }
-}
-
-.container--pl {
-  padding-left: 1.5rem;
-}
-
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -771,6 +712,7 @@ p {
 }
 
 .feature__main-slide {
+  position: relative;
   width: 40%;
   margin-left: 1.75rem;
 }
